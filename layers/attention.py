@@ -52,4 +52,4 @@ class Attention(nn.Module):
         output = torch.cat(torch.split(output, mb_size, dim=0), dim=-1)  # (bs, q_len, n_head*hidden_dim)
         output = self.proj(output)  # (?, q_len, embed_dim)
         output = self.dropout(output)
-        return output,attentions
+        return output, attentions
